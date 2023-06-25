@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Areas/ManagerPanel/Assets/css/ManagerPanelStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="topbar">
+        <h2 class="brand"> Zeytin Yağlı Yönetim Paneli </h2>
+    </div>
+   
+    <div>
+        <div class="sidebar">
+            <a href="@Url.Action("Index","Default")">Anasayfa</a>
+            <a href="@Url.Action("Index","Category")">Kategori İşlemleri</a>
+        </div>
+        <div class="container">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>

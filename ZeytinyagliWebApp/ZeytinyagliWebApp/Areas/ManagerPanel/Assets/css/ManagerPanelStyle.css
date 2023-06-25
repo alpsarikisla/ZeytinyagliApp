@@ -1,0 +1,84 @@
+﻿*,h1,h2,h3,h4,h5,h6{
+    margin:0;padding:0;
+}
+body {
+    font-family:calibri;
+}
+.topbar{
+    height:30px;
+    border-bottom:1px solid silver;
+    background-color:#3f743b;
+    color:white;
+    padding:15px 5px;
+}
+.topbar .brand{
+   font-size:16pt;
+}
+.sidebar{
+    width:250px;
+    padding:10px;
+    float:left;
+    height:1000px;
+    background-color:#c6e4c3;
+}
+    .sidebar a {
+        text-decoration: none;
+        color: #3f743b;
+        display: block;
+        padding: 7px 3px;
+        border-bottom: 1px solid #3f743b;
+    }
+        .sidebar a:hover {
+            background-color: #9bba98;
+            color:white;
+        }
+        .container {
+            width: 1450px;
+            padding: 10px;
+            float: left;
+        }
+
+.form{
+
+}
+.form-header {
+    padding: 5px;
+    border-bottom: 2px solid #3f743b;
+    color: #3f743b
+}
+.form-content{
+    padding:10px;
+}
+.row
+{
+    padding:10px 0;
+}
+.form-label{
+    display:block;
+    padding:5px 0;
+}
+.form-input {
+    width: 100%;
+    padding: 7px;
+}
+.form-validateMesage{
+    color:darkred;
+}
+.form-button{
+    border:none;
+    border-radius:3px;
+    color:white;
+    background-color:#3f743b;
+    padding:7px 20px;
+}
+.form-button:hover {
+    background-color: #305c2d;
+}
+.form-cancelLink
+{
+    color:dimgray;
+    text-decoration:none;
+}
+.form-cancelLink:hover{
+    color:#333333;
+}

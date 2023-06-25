@@ -1,0 +1,28 @@
+﻿@model ZeytinyagliWebApp.Models.Category
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="form">
+    <div class="form-header">
+        <h3>Kategori Ekle</h3>
+    </div>
+    <div class="form-content">
+        <div class="row">
+            @Html.LabelFor(model => model.Name, new { @class = "form-label" })
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-input" } })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "form-validateMesage" })
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.Description, new { @class = "form-label" })
+            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-input" } })
+            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "form-validateMesage" })
+        </div>
+        <div>
+            <button type="submit" class="form-button">Kategori Ekle</button>
+            <a href="@Url.Action("Index","Category")" class="form-cancelLink">Kategori Listesine Dön</a>
+        </div>
+    </div>
+</div>
+

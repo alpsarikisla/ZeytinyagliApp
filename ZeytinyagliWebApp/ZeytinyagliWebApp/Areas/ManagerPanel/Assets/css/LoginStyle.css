@@ -1,0 +1,55 @@
+﻿*{
+  margin:0px;
+  padding:0px;
+}
+body {
+}
+.container{
+    width:802px;
+    height:410px;
+    border:1px solid silver;
+    margin:300px auto;
+}
+.container .left{
+    width:400px;
+    float:left;
+}
+    .container .right {
+        padding: 20px;
+        width: 360px;
+        float: right;
+    }
+.row{
+    margin:10px 0;
+}
+.input-label{
+    display:block;
+    margin:5px 0;
+}
+.form-input {
+    padding: 7px;
+    border: 1px solid silver;
+    font-size: 15pt;
+    border-radius: 2px;
+    width: 338px;
+}
+   
+    .form-input:focus {
+        outline: 1px solid olivedrab;
+    }
+.form-button{
+    display:block;
+    padding:7px 30px;
+    border-radius:5px;
+    color:white;
+    background-color:olivedrab;
+}
+.validationmessage{
+    color:darkred;
+}
+.mesaj {
+    padding: 20px;
+    background-color: #ff9494;
+    color: darkred;
+    border: 1px solid darkred;
+}

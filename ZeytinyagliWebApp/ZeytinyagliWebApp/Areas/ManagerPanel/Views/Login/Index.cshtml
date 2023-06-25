@@ -1,0 +1,46 @@
+﻿@model ZeytinyagliWebApp.Areas.ManagerPanel.Model.ManagerLoginViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Yönetici Giriş</title>
+    <link href="~/Areas/ManagerPanel/Assets/css/LoginStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <img src="~/Areas/ManagerPanel/Assets/images/4530765.jpg" width="400" />
+           
+        </div>
+        <div class="right">
+            @using (Html.BeginForm())
+            {
+                if (TempData["mesaj"]!= null)
+                {
+                    <div class="mesaj">
+                        @TempData["mesaj"]
+                    </div>
+                }
+                <div class="row">
+                    <label class="input-label">Mail</label>
+                    @Html.EditorFor(model => model.Mail, new { htmlAttributes = new {@placeholder="ornek@ornek.com",@class= "form-input" } })
+                    @Html.ValidationMessageFor(model=> model.Mail,"", new { @class = "validationmessage" })
+                </div>
+                <div class="row">
+                    <label class="input-label">Şifre</label>
+                    @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-input" } })
+                    @Html.ValidationMessageFor(model => model.password, "", new { @class = "validationmessage" })
+                </div>
+                <div class="row">
+                    <button type="submit" class="form-button">Giriş Yap</button>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
