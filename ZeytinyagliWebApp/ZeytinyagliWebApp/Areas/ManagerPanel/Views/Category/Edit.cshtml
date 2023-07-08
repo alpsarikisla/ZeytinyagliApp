@@ -1,12 +1,12 @@
 ﻿@model ZeytinyagliWebApp.Models.Category
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Düzenle";
     Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
 }
 
 <div class="form">
     <div class="form-header">
-        <h3>Kategori Ekle</h3>
+        <h3>Kategori Düzenle</h3>
     </div>
     <div class="form-content">
         @using (Html.BeginForm())
@@ -21,8 +21,11 @@
                 @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-input" } })
                 @Html.ValidationMessageFor(model => model.Description, "", new { @class = "form-validateMesage" })
             </div>
+            <div class="row">
+                @Html.EditorFor(model => model.IsActive) Aktif Kategori
+            </div>
             <div>
-                <button type="submit" class="form-button">Kategori Ekle</button>
+                <button type="submit" class="form-button">Kategori Düzenle</button>
                 <a href="@Url.Action("Index","Category")" class="form-cancelLink">Kategori Listesine Dön</a>
             </div>
         }

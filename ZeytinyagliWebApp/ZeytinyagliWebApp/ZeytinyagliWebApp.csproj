@@ -143,6 +143,8 @@
     <Content Include="Areas\ManagerPanel\Views\Default\Index.cshtml" />
     <Content Include="Areas\ManagerPanel\Views\Category\Index.cshtml" />
     <Content Include="Areas\ManagerPanel\Views\Category\Create.cshtml" />
+    <Content Include="Areas\ManagerPanel\Views\Category\Edit.cshtml" />
+    <Content Include="Areas\ManagerPanel\Views\Category\AllIndex.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -1,8 +1,0 @@
-C:\Users\303\Documents\GitHub\ZeytinyagliApp\BoxingUnboxing\BoxingUnboxing\bin\Debug\BoxingUnboxing.exe.config
-C:\Users\303\Documents\GitHub\ZeytinyagliApp\BoxingUnboxing\BoxingUnboxing\bin\Debug\BoxingUnboxing.exe
-C:\Users\303\Documents\GitHub\ZeytinyagliApp\BoxingUnboxing\BoxingUnboxing\bin\Debug\BoxingUnboxing.pdb
-C:\Users\303\Documents\GitHub\ZeytinyagliApp\BoxingUnboxing\BoxingUnboxing\obj\Debug\BoxingUnboxing.csproj.AssemblyReference.cache
-C:\Users\303\Documents\GitHub\ZeytinyagliApp\BoxingUnboxing\BoxingUnboxing\obj\Debug\BoxingUnboxing.csproj.SuggestedBindingRedirects.cache
-C:\Users\303\Documents\GitHub\ZeytinyagliApp\BoxingUnboxing\BoxingUnboxing\obj\Debug\BoxingUnboxing.csproj.CoreCompileInputs.cache
-C:\Users\303\Documents\GitHub\ZeytinyagliApp\BoxingUnboxing\BoxingUnboxing\obj\Debug\BoxingUnboxing.exe
-C:\Users\303\Documents\GitHub\ZeytinyagliApp\BoxingUnboxing\BoxingUnboxing\obj\Debug\BoxingUnboxing.pdb

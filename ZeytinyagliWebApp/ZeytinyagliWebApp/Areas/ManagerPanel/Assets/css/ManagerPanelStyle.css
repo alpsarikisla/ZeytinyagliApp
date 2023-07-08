@@ -82,3 +82,46 @@ body {
 .form-cancelLink:hover{
     color:#333333;
 }
+.listtable {
+    width: 100%;
+    border: 1px solid silver;
+}
+.listtable tr th{
+    border-bottom:2px solid silver;
+    background-color:#c6e4c3;
+    padding:7px 3px;
+    text-align:left;
+}
+    .listtable tr td {
+        border-bottom: 1px solid silver;
+        padding: 7px 3px;
+    }
+.listbtn{
+    padding:5px;
+    border-radius:3px;
+    color:white;
+    text-decoration:none;
+}
+.btnduzenle{
+    background-color:#3f743b;
+}
+.btnsil {
+    background-color: darkred;
+}
+.silinmis td{
+    background-color:#ffb7b7;
+}
+.linkbutton
+{
+    padding:5px 10px;
+    border-radius:3px;
+    text-decoration:none;
+}
+    .main{
+        background-color:#3f743b;
+        color:white;
+    }
+    .second {
+        background-color: #ededed;
+        color:dimgray;
+    }
