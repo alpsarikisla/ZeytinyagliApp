@@ -24,5 +24,7 @@ namespace ZeytinyagliWebApp.Models
 
         [Display(Name = "Aktif")]
         public bool IsActive { get; set; }
+
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

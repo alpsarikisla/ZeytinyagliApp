@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ZeytinyagliWebApp.Models.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+<div class="form">
+    <div class="form-header">
+        <h3>Ürünler</h3>
+    </div>
+    <div style="padding:15px 0px 10px 10px;">
+        <a href="@Url.Action("Create","Product")" class="linkbutton main">Ürün Ekle</a>
+        <a href="@Url.Action("AllIndex","Product")" class="linkbutton second">Tüm Ürünler</a>
+    </div>
+    <div class="form-content">
+        <table class="listtable" cellpadding="0" cellspacing="0">
+            <tr>
+                <th>Resim</th>
+                <th>@Html.DisplayNameFor(model => model.ID)</th>
+                <th>@Html.DisplayNameFor(model => model.Name)</th>
+                <th>@Html.DisplayNameFor(model => model.Category.Name)</th>
+                <th>Stok</th>
+                <th>Fiyat</th>
+                <th>Durum</th>
+                <th>Önerilen</th>
+                <th>Seçenekler</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><img src="~/Assets/ProductImages/Thumb/@item.ListImage" width="48" /></td>
+                    <td>@Html.DisplayFor(model => item.ID)</td>
+                    <td>@Html.DisplayFor(model => item.Name)</td>
+                    <td>@Html.DisplayFor(model => item.Category.Name)</td>
+                    <td>@Html.DisplayFor(model => item.stock)</td>
+                    <td>@Html.DisplayFor(model => item.Price)</td>
+                    <td>
+                        @if (item.IsActive)
+                        {
+                            <span>Aktif</span>
+                        }
+                        else
+                        {
+                            <span>Pasif</span>
+                        }
+                    </td>
+                    <td>
+                        @if (item.IsRecent)
+                        {
+                            <span>Önerilen</span>
+                        }
+
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Category", new { id= item.ID})" class="listbtn btnduzenle">Düzenle</a>
+                        <a href="@Url.Action("Delete", "Category", new { id= item.ID})" class="listbtn btnsil">Sil</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+

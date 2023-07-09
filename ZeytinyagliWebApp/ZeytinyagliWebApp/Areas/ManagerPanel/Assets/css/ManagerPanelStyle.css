@@ -37,10 +37,25 @@ body {
             padding: 10px;
             float: left;
         }
-
-.form{
+.CounterSide{
 
 }
+.CounterSide .box {
+    float:left;
+    margin:10px;
+    border-radius:10px;
+    padding:15px;
+    width:190px;
+    background-color:#ffdf87;
+    font-size:15pt;
+}
+    .CounterSide .box h3
+    {
+        padding:5px;
+        border-bottom:2px solid #f6c43a;
+    }
+    .form {
+    }
 .form-header {
     padding: 5px;
     border-bottom: 2px solid #3f743b;

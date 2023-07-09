@@ -1,0 +1,61 @@
+﻿@model ZeytinyagliWebApp.Models.Product
+@{
+    ViewBag.Title = "Ürün Ekle";
+    Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="form">
+    <div class="form-header">
+        <h3>Ürün Ekle</h3>
+    </div>
+    <div class="form-content">
+        @using (Html.BeginForm("Create","Product", FormMethod.Post, new { enctype="multipart/form-data"}))
+        {
+            <div class="row">
+                @Html.LabelFor(model => model.Name, new { @class = "form-label" })
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-input" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "form-validateMesage" })
+            </div>
+            <div class="row">
+                @Html.LabelFor(model => model.Category_ID, new { @class = "form-label" })
+                @Html.DropDownList("Category_ID", null, htmlAttributes: new { @class = "form-input" })
+                @Html.ValidationMessageFor(model => model.Category_ID, "", new { @class = "form-validateMesage" })
+            </div>
+            <div class="row">
+                @Html.LabelFor(model => model.Price, new { @class = "form-label" })
+                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-input" } })
+                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "form-validateMesage" })
+            </div>
+            <div class="row">
+                @Html.LabelFor(model => model.stock, new { @class = "form-label" })
+                @Html.EditorFor(model => model.stock, new { htmlAttributes = new { @class = "form-input" } })
+                @Html.ValidationMessageFor(model => model.stock, "", new { @class = "form-validateMesage" })
+            </div>
+            <div class="row">
+                @Html.LabelFor(model => model.Summary, new { @class = "form-label" })
+                @Html.EditorFor(model => model.Summary, new { htmlAttributes = new { @class = "form-input" } })
+                @Html.ValidationMessageFor(model => model.Summary, "", new { @class = "form-validateMesage" })
+            </div>
+            <div class="row">
+                @Html.LabelFor(model => model.Description, new { @class = "form-label" })
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-input" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "form-validateMesage" })
+            </div>
+            <div class="row">
+                @Html.LabelFor(model => model.ListImage, new { @class = "form-label" })
+                <input type="file" name="ListeResim" />
+                @Html.ValidationMessageFor(model => model.ListImage, "", new { @class = "form-validateMesage" })
+            </div>
+            <div class="row">
+                @Html.LabelFor(model => model.Image, new { @class = "form-label" })
+                <input type="file" name="Resim" />
+                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "form-validateMesage" })
+            </div>
+            <div class="row">
+                <button type="submit" class="form-button">Ürün Ekle</button>
+                <a href="@Url.Action("Index","Product")" class="form-cancelLink">Ürün Listesine Dön</a>
+            </div>
+        }
+    </div>
+</div>
+

@@ -4,5 +4,15 @@
     Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Yönetim Paneli</h2>
+<div class="CounterSide">
+    <div class="box">
+        <h3>Kategori</h3>
+        @ViewBag.CategoryCount
+    </div>
+    <div class="box">
+        <h3>Ürün</h3>
+        @ViewBag.ProductCount
+    </div>
+</div>
 

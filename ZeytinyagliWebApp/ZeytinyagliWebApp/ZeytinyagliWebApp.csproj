@@ -123,6 +123,7 @@
     <Compile Include="Areas\ManagerPanel\Controllers\CategoryController.cs" />
     <Compile Include="Areas\ManagerPanel\Controllers\DefaultController.cs" />
     <Compile Include="Areas\ManagerPanel\Controllers\LoginController.cs" />
+    <Compile Include="Areas\ManagerPanel\Controllers\ProductController.cs" />
     <Compile Include="Areas\ManagerPanel\Filters\ManagerLoginFilterAttribute.cs" />
     <Compile Include="Areas\ManagerPanel\ManagerPanelAreaRegistration.cs" />
     <Compile Include="Areas\ManagerPanel\Model\ManagerLoginViewModel.cs" />
@@ -133,6 +134,7 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Manager.cs" />
     <Compile Include="Models\OliveOilDBModel.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +147,8 @@
     <Content Include="Areas\ManagerPanel\Views\Category\Create.cshtml" />
     <Content Include="Areas\ManagerPanel\Views\Category\Edit.cshtml" />
     <Content Include="Areas\ManagerPanel\Views\Category\AllIndex.cshtml" />
+    <Content Include="Areas\ManagerPanel\Views\Product\Index.cshtml" />
+    <Content Include="Areas\ManagerPanel\Views\Product\Create.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -156,6 +160,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\ManagerPanel\Data\" />
+    <Folder Include="Assets\ProductImages\Thumb\" />
     <Folder Include="Controllers\" />
   </ItemGroup>
   <PropertyGroup>

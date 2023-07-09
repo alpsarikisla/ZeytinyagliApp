@@ -8,7 +8,7 @@ using ZeytinyagliWebApp.Models;
 
 namespace ZeytinyagliWebApp.Areas.ManagerPanel.Controllers
 {
-    //[ManagerLoginFilter]
+    [ManagerLoginFilter]
     public class CategoryController : Controller
     {
         OliveOilDBModel db = new OliveOilDBModel();
