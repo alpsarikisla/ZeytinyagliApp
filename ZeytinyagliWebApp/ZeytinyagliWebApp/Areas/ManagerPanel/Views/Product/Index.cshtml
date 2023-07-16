@@ -19,7 +19,8 @@
                 <th>Resim</th>
                 <th>@Html.DisplayNameFor(model => model.ID)</th>
                 <th>@Html.DisplayNameFor(model => model.Name)</th>
-                <th>@Html.DisplayNameFor(model => model.Category.Name)</th>
+                <th>Kategori</th>
+                <th>Marka</th>
                 <th>Stok</th>
                 <th>Fiyat</th>
                 <th>Durum</th>
@@ -33,6 +34,7 @@
                     <td>@Html.DisplayFor(model => item.ID)</td>
                     <td>@Html.DisplayFor(model => item.Name)</td>
                     <td>@Html.DisplayFor(model => item.Category.Name)</td>
+                    <td>@Html.DisplayFor(model => item.Brand.Name)</td>
                     <td>@Html.DisplayFor(model => item.stock)</td>
                     <td>@Html.DisplayFor(model => item.Price)</td>
                     <td>
@@ -53,7 +55,7 @@
 
                     </td>
                     <td>
-                        <a href="@Url.Action("Edit", "Category", new { id= item.ID})" class="listbtn btnduzenle">Düzenle</a>
+                        <a href="@Url.Action("Edit", "Product", new { id= item.ID})" class="listbtn btnduzenle">Düzenle</a>
                         <a href="@Url.Action("Delete", "Category", new { id= item.ID})" class="listbtn btnsil">Sil</a>
                     </td>
                 </tr>

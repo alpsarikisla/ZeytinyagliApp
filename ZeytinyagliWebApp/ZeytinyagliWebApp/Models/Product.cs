@@ -14,11 +14,18 @@ namespace ZeytinyagliWebApp.Models
         public int ID { get; set; }
 
         [Display(Name ="Kategori")]
-        public int Category_ID { get; set; }
+        public int? Category_ID { get; set; }
 
         [ForeignKey("Category_ID")]
         [Display(Name = "Kategori")]
         public virtual Category Category { get; set; }
+
+        [Display(Name = "Marka")]
+        public int? Brand_ID { get; set; }
+
+        [ForeignKey("Brand_ID")]
+        [Display(Name = "Marka")]
+        public virtual Brand Brand { get; set; }
 
         [Display(Name="İsim")]
         [Required(ErrorMessage ="Bu alan zorunludur")]

@@ -1,16 +1,19 @@
 ﻿@model ZeytinyagliWebApp.Models.Product
 @{
-    ViewBag.Title = "Ürün Ekle";
+    ViewBag.Title = "Ürün Düzenle";
     Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
 }
 
 <div class="form">
     <div class="form-header">
-        <h3>Ürün Ekle</h3>
+        <h3>Ürün Düzenle</h3>
     </div>
     <div class="form-content">
-        @using (Html.BeginForm("Create", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        @using (Html.BeginForm("Edit", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
+           // @Html.HiddenFor(model => model.ID)
+            @Html.HiddenFor(model => model.ListImage)
+            @Html.HiddenFor(model => model.Image)
             <div class="row">
                 @Html.LabelFor(model => model.Name, new { @class = "form-label" })
                 @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-input" } })
@@ -47,17 +50,28 @@
                 @Html.ValidationMessageFor(model => model.Description, "", new { @class = "form-validateMesage" })
             </div>
             <div class="row">
-                @Html.LabelFor(model => model.ListImage, new { @class = "form-label" })
-                <input type="file" name="ListeResim" />
-                @Html.ValidationMessageFor(model => model.ListImage, "", new { @class = "form-validateMesage" })
+                <div style="float:left; width:130px">
+                    <img src="~/Assets/ProductImages/Thumb/@Model.ListImage" style="width:120px;" />
+                </div>
+                <div style="float:left; width:400px">
+                    @Html.LabelFor(model => model.ListImage, new { @class = "form-label" })
+                    <input type="file" name="ListeResim" />
+                    @Html.ValidationMessageFor(model => model.ListImage, "", new { @class = "form-validateMesage" })
+                </div>
             </div>
             <div class="row">
-                @Html.LabelFor(model => model.Image, new { @class = "form-label" })
-                <input type="file" name="Resim" />
-                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "form-validateMesage" })
+                <div style="float:left; width:130px">
+                    <img src="~/Assets/ProductImages/@Model.Image" style="width:120px;" />
+                </div>
+                <div style="float:left; width:400px">
+                    @Html.LabelFor(model => model.Image, new { @class = "form-label" })
+                    <input type="file" name="Resim" />
+                    @Html.ValidationMessageFor(model => model.Image, "", new { @class = "form-validateMesage" })
+                </div>
             </div>
+            <div style="clear:both"></div>
             <div class="row">
-                <button type="submit" class="form-button">Ürün Ekle</button>
+                <button type="submit" class="form-button">Ürün Düzenle</button>
                 <a href="@Url.Action("Index","Product")" class="form-cancelLink">Ürün Listesine Dön</a>
             </div>
         }

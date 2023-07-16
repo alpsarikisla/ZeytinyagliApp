@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Assets/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="topbar">
+                <div class="brand">
+                    <img src="~/Assets/SiteImages/SiteLogo.png" />
+                </div>
+                <div class="userPanel">
+
+                </div>
+            </div>
+            <div class="navbar">
+                <ul>
+                    <a href=""><li>Anasayfa</li></a>
+                    <a href=""><li>Anasayfa</li></a>
+                    <a href=""><li>Anasayfa</li></a>
+                    <a href=""><li>Anasayfa</li></a>
+                </ul>
+                <div class="floatfix"></div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container" style="min-height: 900px;">
+            @RenderBody()
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

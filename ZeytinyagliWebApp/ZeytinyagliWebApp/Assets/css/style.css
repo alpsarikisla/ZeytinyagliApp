@@ -1,0 +1,61 @@
+﻿*{margin:0; padding:0;}
+.floatfix{clear:both}
+body {
+    background-color:#f5f5f5;
+    background-image:url(../../Assets/SiteImages/body-bg.svg);
+    font-family:Calibri;
+}
+.topOfferBar {
+    background-color:#b6ff00;
+    height:30px;
+}
+
+header
+{
+    background-color:white;
+}
+header .topbar{
+    padding-top:15px;
+    min-height:100px;
+}
+    header .topbar .brand {
+        width:200px;
+        float:left;
+    }
+    header .topbar .brand img {
+        width: 200px;
+    }
+    header .topbar .userPanel {
+        width: 200px;
+        float: right;
+    }
+    header .navbar {
+        border-top: 1px solid silver;
+        border-bottom: 1px solid silver;
+    }
+        header .navbar ul{
+            list-style-type:none;
+        }
+        header .navbar ul li {
+            float:left;
+            border-bottom:2px solid white;
+            padding:7px;
+        }
+            header .navbar ul a {
+                color:#36932b;
+                text-decoration:none
+            }
+            header .navbar ul a:hover {
+
+            }
+                header .navbar ul a:hover li {
+                    border-bottom: 2px solid #36932b;
+                }
+                .container {
+                    width: 1200px;
+                    margin: 0 auto;
+                    background-color: white;
+                }
+main{
+   
+}

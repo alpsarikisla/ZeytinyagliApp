@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -25,7 +26,8 @@ namespace ZeytinyagliWebApp.Areas.ManagerPanel.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            ViewBag.Category_ID = new SelectList(db.Categories, "ID", "Name");
+            ViewBag.Category_ID = new SelectList(db.Categories.Where(x=> x.IsDeleted==false), "ID", "Name");
+            ViewBag.Brand_ID = new SelectList(db.Brands.Where(x => x.IsDeleted == false), "ID", "Name");
             return View();
         }
 
@@ -33,7 +35,8 @@ namespace ZeytinyagliWebApp.Areas.ManagerPanel.Controllers
         [HttpPost]
         public ActionResult Create(Product model, HttpPostedFileBase ListeResim, HttpPostedFileBase Resim)
         {
-            ViewBag.Category_ID = new SelectList(db.Categories, "ID", "Name");
+            ViewBag.Category_ID = new SelectList(db.Categories.Where(x => x.IsDeleted == false), "ID", "Name");
+            ViewBag.Brand_ID = new SelectList(db.Brands.Where(x => x.IsDeleted == false), "ID", "Name");
             if (ModelState.IsValid)
             {
                 try
@@ -91,25 +94,57 @@ namespace ZeytinyagliWebApp.Areas.ManagerPanel.Controllers
         }
 
         // GET: ManagerPanel/Product/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
+            Product model = db.Products.Find(id);
+            if (model == null)
+            {
+                return RedirectToAction("Index");
+            }
+            ViewBag.Category_ID = new SelectList(db.Categories.Where(x => x.IsDeleted == false), "ID", "Name", model.Category_ID);
+            ViewBag.Brand_ID = new SelectList(db.Brands.Where(x => x.IsDeleted == false), "ID", "Name", model.Brand_ID);
+            return View(model);
         }
 
         // POST: ManagerPanel/Product/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Product model, HttpPostedFileBase ListeResim, HttpPostedFileBase Resim)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                if (ListeResim != null)
+                {
+                    FileInfo fi = new FileInfo(ListeResim.FileName);
+                    if (fi.Extension == ".jpg" || fi.Extension == ".png")
+                    {
+                        string name = Guid.NewGuid().ToString() + fi.Extension;
+                        model.ListImage = name;
+                        ListeResim.SaveAs(Server.MapPath("~/Assets/ProductImages/Thumb/" + name));
+                        IsListImageValid = true;
+                    }
+                }
+                if (Resim != null)
+                {
+                    FileInfo fi = new FileInfo(Resim.FileName);
+                    if (fi.Extension == ".jpg" || fi.Extension == ".png")
+                    {
+                        string name = Guid.NewGuid().ToString() + fi.Extension;
+                        model.Image = name;
+                        Resim.SaveAs(Server.MapPath("~/Assets/ProductImages/" + name));
+                        IsImageValid = true;
+                    }
+                }
+                db.Entry(model).State = EntityState.Modified;
+                db.SaveChanges();
+                
             }
-            catch
-            {
-                return View();
-            }
+            ViewBag.Category_ID = new SelectList(db.Categories.Where(x => x.IsDeleted == false), "ID", "Name", model.Category_ID);
+            ViewBag.Brand_ID = new SelectList(db.Brands.Where(x => x.IsDeleted == false), "ID", "Name", model.Brand_ID);
+            return View(model);
         }
 
         // GET: ManagerPanel/Product/Delete/5

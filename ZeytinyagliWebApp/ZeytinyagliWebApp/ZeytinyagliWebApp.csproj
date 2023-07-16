@@ -114,6 +114,14 @@
     <Content Include="Areas\ManagerPanel\Assets\css\ManagerPanelStyle.css" />
     <Content Include="Areas\ManagerPanel\Assets\images\4530765.jpg" />
     <Content Include="Areas\ManagerPanel\Assets\images\Wavy_Tech-28_Single-10.jpg" />
+    <Content Include="Assets\BrandLogos\komimi.png" />
+    <Content Include="Assets\css\style.css" />
+    <Content Include="Assets\SiteImages\body-bg.svg" />
+    <Content Include="Assets\SiteImages\SiteLogo.png" />
+    <Content Include="Assets\SiteImages\SiteLogoLight.png" />
+    <Content Include="Assets\SiteImages\Slider1.png" />
+    <Content Include="Assets\SiteImages\Slider2.png" />
+    <Content Include="Assets\SiteImages\slider3.png" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -127,10 +135,12 @@
     <Compile Include="Areas\ManagerPanel\Filters\ManagerLoginFilterAttribute.cs" />
     <Compile Include="Areas\ManagerPanel\ManagerPanelAreaRegistration.cs" />
     <Compile Include="Areas\ManagerPanel\Model\ManagerLoginViewModel.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Brand.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Manager.cs" />
     <Compile Include="Models\OliveOilDBModel.cs" />
@@ -149,7 +159,10 @@
     <Content Include="Areas\ManagerPanel\Views\Category\AllIndex.cshtml" />
     <Content Include="Areas\ManagerPanel\Views\Product\Index.cshtml" />
     <Content Include="Areas\ManagerPanel\Views\Product\Create.cshtml" />
+    <Content Include="Areas\ManagerPanel\Views\Product\Edit.cshtml" />
     <None Include="packages.config" />
+    <Content Include="Views\Shared\_LayoutPage1.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -161,7 +174,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\ManagerPanel\Data\" />
     <Folder Include="Assets\ProductImages\Thumb\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
