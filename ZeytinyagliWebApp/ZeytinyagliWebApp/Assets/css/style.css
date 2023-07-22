@@ -55,7 +55,40 @@ header .topbar{
                     width: 1200px;
                     margin: 0 auto;
                     background-color: white;
-                }
+                    padding:10px;
+                    }
 main{
+
+}
+.card {
+    float:left;
+    color: #191919;
+    width: 263px;
+    padding: 10px;
+    margin: 8px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.37);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.37);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.37);
+}
+.card .card-body{
    
 }
+    .card .card-body .productPrice {
+        font-weight:100;
+    }
+    .card .card-body .card-image img {
+        width: 250px;
+    }
+    .card .card-body .Addcart {
+        display:block;
+        text-align:center;
+        text-decoration:none;
+        padding:10px 5px;
+        background-color:#36932b;
+        color:white;
+        border-radius:5px;
+        margin-top:10px;
+    }
+    .card .card-body .Addcart:hover{
+        background-color:#50b044;
+    }

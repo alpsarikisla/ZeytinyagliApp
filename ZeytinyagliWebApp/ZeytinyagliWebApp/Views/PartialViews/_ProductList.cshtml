@@ -1,0 +1,18 @@
+﻿@model IEnumerable<ZeytinyagliWebApp.Models.Product>
+@using ZeytinyagliWebApp.Models
+
+<section>
+    @foreach (Product item in Model)
+	{
+		<div class="card">
+			<div class="card-body">
+				<div class="card-image">
+					<img src="~/Assets/ProductImages/Thumb/@item.ListImage" alt="@item.Name" />
+				</div>
+				<h3 class="productName">@item.Name</h3>
+				<h2 class="productPrice">@item.Price TL </h2>
+				<a href="@Url.Action("Add", "ShoppingCart",new { id= item.ID})" class="Addcart">Sepete Ekle</a>
+			</div>
+		</div>
+	}
+</section>

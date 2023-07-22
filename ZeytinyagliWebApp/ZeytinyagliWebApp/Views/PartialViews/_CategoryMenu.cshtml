@@ -1,0 +1,9 @@
+﻿@model IEnumerable<ZeytinyagliWebApp.Models.Category>
+@using ZeytinyagliWebApp.Models
+<ul>
+    @foreach (Category item in Model)
+    {
+        <a href="@Url.Action("","", new {id= item.ID})">
+        <li>@item.Name</li></a>
+    }
+</ul>

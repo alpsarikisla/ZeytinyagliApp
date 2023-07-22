@@ -136,6 +136,8 @@
     <Compile Include="Areas\ManagerPanel\ManagerPanelAreaRegistration.cs" />
     <Compile Include="Areas\ManagerPanel\Model\ManagerLoginViewModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PartialViewsController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -145,6 +147,7 @@
     <Compile Include="Models\Manager.cs" />
     <Compile Include="Models\OliveOilDBModel.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\SessionCartProduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +166,9 @@
     <None Include="packages.config" />
     <Content Include="Views\Shared\_LayoutPage1.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\PartialViews\_CategoryMenu.cshtml" />
+    <Content Include="Views\PartialViews\_ProductList.cshtml" />
+    <Content Include="Views\PartialViews\_CartpartialMenuView.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -174,6 +180,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\ManagerPanel\Data\" />
     <Folder Include="Assets\ProductImages\Thumb\" />
+    <Folder Include="Views\ShoppingCart\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

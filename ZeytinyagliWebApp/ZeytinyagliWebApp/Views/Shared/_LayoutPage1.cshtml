@@ -14,16 +14,15 @@
                     <img src="~/Assets/SiteImages/SiteLogo.png" />
                 </div>
                 <div class="userPanel">
-
+                    @{
+                        Html.RenderAction("_CartpartialMenuView", "PartialViews");
+                    }
                 </div>
             </div>
             <div class="navbar">
-                <ul>
-                    <a href=""><li>Anasayfa</li></a>
-                    <a href=""><li>Anasayfa</li></a>
-                    <a href=""><li>Anasayfa</li></a>
-                    <a href=""><li>Anasayfa</li></a>
-                </ul>
+                @{ 
+                    Html.RenderAction("_CategoryMenu", "PartialViews");
+                }
                 <div class="floatfix"></div>
             </div>
         </div>
@@ -34,7 +33,7 @@
         </div>
     </main>
     <footer>
-
+      
     </footer>
 </body>
 </html>
