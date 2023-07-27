@@ -11,6 +11,20 @@ namespace ZeytinyagliWebApp.Controllers
     {
         OliveOilDBModel db = new OliveOilDBModel();
         // GET: ShoppingCart
+
+        public ActionResult Index()
+        {
+            List<SessionCartProduct> SessionCart;
+            if (Session["shoppingCart"] != null)
+            {
+                SessionCart = (List<SessionCartProduct>)Session["shoppingCart"];
+            }
+            else
+            {
+                SessionCart = new List<SessionCartProduct>();
+            }
+            return View(SessionCart);
+        }
         public ActionResult Add(int? id)
         {
             Product product = db.Products.Find(id);
@@ -35,6 +49,7 @@ namespace ZeytinyagliWebApp.Controllers
                     scp.Product_ID = product.ID;
                     scp.Quantity = 1;
                     scp.ThumbImage = product.ListImage;
+                    scp.Price = product.Price;
                     SessionCart.Add(scp);
                 }
             }
@@ -46,10 +61,59 @@ namespace ZeytinyagliWebApp.Controllers
                 scp.Product_ID = product.ID;
                 scp.Quantity = 1;
                 scp.ThumbImage = product.ListImage;
+                scp.Price = product.Price;
                 SessionCart.Add(scp);
             }
             Session["shoppingCart"] = SessionCart;
             return RedirectToAction("Index","Home");
+        }
+        public ActionResult Increase(int? id)
+        {
+            List<SessionCartProduct> SessionCart = (List<SessionCartProduct>)Session["shoppingCart"];
+
+            for (int i = 0; i < SessionCart.Count; i++)
+            {
+                if (SessionCart[i].Product_ID == id)
+                {
+                    SessionCart[i].Quantity += 1;
+                }
+            }
+            Session["shoppingCart"] = SessionCart;
+            return RedirectToAction("Index");
+        }
+        public ActionResult Decrease(int? id)
+        {
+            List<SessionCartProduct> SessionCart = (List<SessionCartProduct>)Session["shoppingCart"];
+
+            for (int i = 0; i < SessionCart.Count; i++)
+            {
+                if (SessionCart[i].Product_ID == id)
+                {
+                    if (SessionCart[i].Quantity > 1)
+                    {
+                        SessionCart[i].Quantity -= 1;
+                    }
+                    else
+                    {
+                        SessionCart.RemoveAt(i);
+                    }
+                }
+            }
+            Session["shoppingCart"] = SessionCart;
+            return RedirectToAction("Index");
+        }
+        public ActionResult Delete(int? id)
+        {
+            List<SessionCartProduct> SessionCart = (List<SessionCartProduct>)Session["shoppingCart"];
+            for (int i = 0; i < SessionCart.Count; i++)
+            {
+                if (SessionCart[i].Product_ID == id)
+                {
+                    SessionCart.RemoveAt(i);
+                }
+            }
+            Session["shoppingCart"] = SessionCart;
+            return RedirectToAction("Index");
         }
     }
 }

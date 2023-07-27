@@ -92,3 +92,50 @@ main{
     .card .card-body .Addcart:hover{
         background-color:#50b044;
     }
+.shoppingCart .table table
+{
+   width:100%;
+}
+.shoppingCart .table tr th {
+    padding: 5px;
+    margin: 0px;
+    text-align: left;
+    border-bottom: 1px solid silver;
+}
+    .shoppingCart .table tr td {
+        padding: 0px;
+        margin: 0px;
+        border-bottom:1px solid silver;
+    }
+.shoppingCart .table .cartImage {
+    width: 60px;
+    border: 1px solid silver;
+    border-radius:5px;
+    padding:10px;
+    margin:10px;
+}
+.shoppingCart a{
+    padding:5px 10px;
+    border:1px solid silver;
+    margin:0;
+    text-decoration: none;
+    color:dimgray;
+    font-weight:900;
+}
+.shoppingCart .decrease {
+}
+.shoppingCart .increase {
+
+}
+.shoppingCart .delete {
+
+}
+.Title{
+    padding:20px 5px;
+    border-bottom:3px solid silver;
+    margin-bottom:10px;
+}
+.totalrow td{
+    font-weight:900;
+    font-size:17pt;
+}

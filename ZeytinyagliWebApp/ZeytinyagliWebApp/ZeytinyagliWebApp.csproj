@@ -169,6 +169,7 @@
     <Content Include="Views\PartialViews\_CategoryMenu.cshtml" />
     <Content Include="Views\PartialViews\_ProductList.cshtml" />
     <Content Include="Views\PartialViews\_CartpartialMenuView.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -180,7 +181,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\ManagerPanel\Data\" />
     <Folder Include="Assets\ProductImages\Thumb\" />
-    <Folder Include="Views\ShoppingCart\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

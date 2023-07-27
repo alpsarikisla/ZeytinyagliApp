@@ -1,0 +1,69 @@
+﻿@model IEnumerable<ZeytinyagliWebApp.Models.SessionCartProduct>
+@using ZeytinyagliWebApp.Models;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<div class="Title">
+    <h3>Alışveriş Sepeti</h3>
+</div>
+<div class="shoppingCart">
+    <div class="table">
+        <table>
+            <tr>
+                <th>
+                    Resim
+                </th>
+                <th>
+                    Isim
+                </th>
+                <th>
+                    Adet
+                </th>
+                <th>
+                    Fiyat
+                </th>
+                <th>
+                    Toplam
+                </th>
+                <th>Seçenekler</th>
+            </tr>
+            @if (Model.Count() != 0)
+            {
+                foreach (SessionCartProduct item in Model)
+                {
+                    decimal total = item.Price * item.Quantity;
+                    <tr>
+                        <td><img src="~/Assets/ProductImages/Thumb/@item.ThumbImage" class="cartImage" /></td>
+                        <td>@item.ProductName</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.Price</td>
+                        <td>
+                            @total
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Decrease", "ShoppingCart", new { id = item.Product_ID})" class="decrease">-</a>
+                            <a href="@Url.Action("Increase", "ShoppingCart", new { id = item.Product_ID})" class="increase">+</a>
+                            <a href="@Url.Action("Delete", "ShoppingCart", new { id = item.Product_ID})" class="delete">Sil</a>
+                        </td>
+                    </tr>
+                }
+                <tr class="totalrow">
+                    <td colspan="3"></td>
+                    <td colspan="2">Toplam = </td>
+                    <td > @Model.Sum(x => x.Price * x.Quantity) ₺</td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td colspan="6" align="center">
+                        <h3 style="margin:20px 0">Sepetinizde Ürün Bulunmamaktadır</h3>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+
