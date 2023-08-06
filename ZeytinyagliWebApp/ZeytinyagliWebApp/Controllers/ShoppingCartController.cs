@@ -1,12 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
 using ZeytinyagliWebApp.Models;
 
 namespace ZeytinyagliWebApp.Controllers
 {
+    public class MerchandAPIM
+    {
+        public string MerchandID { get; set; }
+        public string Password { get; set; }
+        public string CardNumber { get; set; }
+        public int ExpMonth { get; set; }
+        public int ExpYear { get; set; }
+        public string CCV { get; set; }
+        public decimal Price { get; set; }
+
+    }
     public class ShoppingCartController : Controller
     {
         OliveOilDBModel db = new OliveOilDBModel();
@@ -114,6 +126,98 @@ namespace ZeytinyagliWebApp.Controllers
             }
             Session["shoppingCart"] = SessionCart;
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Pay()
+        {
+            List<SessionCartProduct> SessionCart = new List<SessionCartProduct>();
+            decimal toplam = 0;
+
+            if (Session["shoppingCart"] != null)
+            {
+                SessionCart = (List<SessionCartProduct>)Session["shoppingCart"];
+                toplam = SessionCart.Sum(x => x.Quantity * x.Price);
+            }
+
+            ViewBag.Total = toplam;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Pay(string CardNumber, string name, string ReqM, string ReqY, string CCV)
+        {
+            List<SessionCartProduct> SessionCart = new List<SessionCartProduct>();
+            decimal toplam = 0;
+
+            if (Session["shoppingCart"] != null)
+            {
+                SessionCart = (List<SessionCartProduct>)Session["shoppingCart"];
+                toplam = SessionCart.Sum(x => x.Quantity * x.Price);
+            }
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    //client.BaseAddress = new Uri("https://localhost:44397/API/TestPay");
+                    client.BaseAddress = new Uri("https://localhost:44397/API/Pay");
+
+                    MerchandAPIM mapim = new MerchandAPIM();
+                    mapim.CardNumber = CardNumber;
+                    mapim.ExpMonth = Convert.ToInt32(ReqM);
+                    mapim.ExpYear = Convert.ToInt32(ReqY);
+                    mapim.CCV = CCV;
+                    mapim.Price = toplam;
+                    mapim.MerchandID = "7854158";
+                    mapim.Password = "A789C";
+
+                    //HTTP POST
+                    var posttask = client.PostAsJsonAsync<MerchandAPIM>("Pay", mapim);
+                    posttask.Wait();//Api Çalıştırıldı
+                    var result = posttask.Result;
+                    if (result.IsSuccessStatusCode)
+                    {
+                        var strinResp = result.Content.ReadAsStringAsync();
+                        if (strinResp.Result == "\"210\"")
+                        {
+                            return RedirectToAction("PaymentSuccess");
+                        }
+                        else if(strinResp.Result == "\"900\"")
+                        {
+                            ViewBag.message = "Ödeme Sistem Hatası. Lütfen daha sonra tekrar deneyiniz. Merchand Bulunamadı";
+                        }
+                        else if (strinResp.Result == "\"800\"")
+                        {
+                            ViewBag.message = "Ödeme Sistem Hatası. Lütfen daha sonra tekrar deneyiniz. Pos Sistemi kapalı";
+                        }
+                        else if (strinResp.Result == "\"700\"")
+                        {
+                            ViewBag.message = "Banka Mesajı = Kart Bulunamadı";
+                        }
+                        else if (strinResp.Result == "\"600\"")
+                        {
+                            ViewBag.message = "Banka Mesajı =Kart Sonkullanma Tarihini Kontrol ediniz";
+                        }
+                        else if (strinResp.Result == "\"505\"")
+                        {
+                            ViewBag.message = "Banka Mesajı = CCV Kontrol ediniz";
+                        }
+                        else if (strinResp.Result == "\"410\"")
+                        {
+                            ViewBag.message = "Banka Mesajı = Kart Bakiyesi yetersiz";
+                        }
+                        else if (strinResp.Result == "\"300\"")
+                        {
+                            ViewBag.message = "Banka Mesajı = Bir Hata oluştu";
+                        }
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+            return View();
         }
     }
 }

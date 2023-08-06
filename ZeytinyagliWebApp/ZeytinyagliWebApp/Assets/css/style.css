@@ -1,67 +1,85 @@
-﻿*{margin:0; padding:0;}
-.floatfix{clear:both}
-body {
-    background-color:#f5f5f5;
-    background-image:url(../../Assets/SiteImages/body-bg.svg);
-    font-family:Calibri;
-}
-.topOfferBar {
-    background-color:#b6ff00;
-    height:30px;
+﻿* {
+    margin: 0;
+    padding: 0;
 }
 
-header
-{
-    background-color:white;
+.floatfix {
+    clear: both
 }
-header .topbar{
-    padding-top:15px;
-    min-height:100px;
+
+body {
+    background-color: #f5f5f5;
+    background-image: url(../../Assets/SiteImages/body-bg.svg);
+    font-family: Calibri;
 }
-    header .topbar .brand {
-        width:200px;
-        float:left;
+
+.topOfferBar {
+    background-color: #b6ff00;
+    height: 30px;
+}
+
+header {
+    background-color: white;
+}
+
+    header .topbar {
+        padding-top: 15px;
+        min-height: 100px;
     }
-    header .topbar .brand img {
-        width: 200px;
-    }
-    header .topbar .userPanel {
-        width: 200px;
-        float: right;
-    }
+
+        header .topbar .brand {
+            width: 200px;
+            float: left;
+        }
+
+            header .topbar .brand img {
+                width: 200px;
+            }
+
+        header .topbar .userPanel {
+            width: 200px;
+            float: right;
+        }
+
     header .navbar {
         border-top: 1px solid silver;
         border-bottom: 1px solid silver;
     }
-        header .navbar ul{
-            list-style-type:none;
+
+        header .navbar ul {
+            list-style-type: none;
         }
-        header .navbar ul li {
-            float:left;
-            border-bottom:2px solid white;
-            padding:7px;
-        }
+
+            header .navbar ul li {
+                float: left;
+                border-bottom: 2px solid white;
+                padding: 7px;
+            }
+
             header .navbar ul a {
-                color:#36932b;
-                text-decoration:none
+                color: #36932b;
+                text-decoration: none
             }
-            header .navbar ul a:hover {
 
-            }
-                header .navbar ul a:hover li {
-                    border-bottom: 2px solid #36932b;
+                header .navbar ul a:hover {
                 }
-                .container {
-                    width: 1200px;
-                    margin: 0 auto;
-                    background-color: white;
-                    padding:10px;
-                    }
-main{
 
+                    header .navbar ul a:hover li {
+                        border-bottom: 2px solid #36932b;
+                    }
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 10px;
 }
+
+main {
+}
+
 .card {
-    float:left;
+    float: left;
     color: #191919;
     width: 263px;
     padding: 10px;
@@ -70,72 +88,146 @@ main{
     -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.37);
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.37);
 }
-.card .card-body{
-   
+
+    .card .card-body {
+    }
+
+        .card .card-body .productPrice {
+            font-weight: 100;
+        }
+
+        .card .card-body .card-image img {
+            width: 250px;
+        }
+
+        .card .card-body .Addcart {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px 5px;
+            background-color: #36932b;
+            color: white;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+            .card .card-body .Addcart:hover {
+                background-color: #50b044;
+            }
+
+.shoppingCart .table table {
+    width: 100%;
 }
-    .card .card-body .productPrice {
-        font-weight:100;
-    }
-    .card .card-body .card-image img {
-        width: 250px;
-    }
-    .card .card-body .Addcart {
-        display:block;
-        text-align:center;
-        text-decoration:none;
-        padding:10px 5px;
-        background-color:#36932b;
-        color:white;
-        border-radius:5px;
-        margin-top:10px;
-    }
-    .card .card-body .Addcart:hover{
-        background-color:#50b044;
-    }
-.shoppingCart .table table
-{
-   width:100%;
-}
+
 .shoppingCart .table tr th {
     padding: 5px;
     margin: 0px;
     text-align: left;
     border-bottom: 1px solid silver;
 }
-    .shoppingCart .table tr td {
-        padding: 0px;
-        margin: 0px;
-        border-bottom:1px solid silver;
-    }
+
+.shoppingCart .table tr td {
+    padding: 0px;
+    margin: 0px;
+    border-bottom: 1px solid silver;
+}
+
 .shoppingCart .table .cartImage {
     width: 60px;
     border: 1px solid silver;
-    border-radius:5px;
-    padding:10px;
-    margin:10px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
 }
-.shoppingCart a{
-    padding:5px 10px;
-    border:1px solid silver;
-    margin:0;
+
+.shoppingCart a {
+    padding: 5px 10px;
+    border: 1px solid silver;
+    margin: 0;
     text-decoration: none;
-    color:dimgray;
-    font-weight:900;
+    color: dimgray;
+    font-weight: 900;
 }
+
 .shoppingCart .decrease {
 }
+
 .shoppingCart .increase {
-
 }
+
 .shoppingCart .delete {
+}
 
+.Title {
+    padding: 20px 5px;
+    border-bottom: 3px solid silver;
+    margin-bottom: 10px;
 }
-.Title{
-    padding:20px 5px;
-    border-bottom:3px solid silver;
+
+.totalrow td {
+    font-weight: 900;
+    font-size: 17pt;
+}
+
+.PayPanel {
+    color:gray;
+}
+    .PayPanel .header {
+        font-size:15pt;
+        padding:10px;
+    }
+    .PayPanel .body {
+        padding-top:30px;
+        width: 900px;
+        border:1px solid silver;
+        height:240px;
+        float:left;
+    }
+    .PayPanel .total {
+        padding: 10px;
+        width: 270px;
+        border: 1px solid silver;
+        height: 250px;
+        float: right;
+    }
+        .PayPanel .body .left {
+            float: left;
+            width: 600px;
+        }
+
+        .PayPanel .body .right {
+            float: left;
+            width: 200px;
+        }
+        .PayPanel .body .left table {
+            width:90%
+        }
+        .PayPanel .body .left table tr td {
+            padding:7px;
+        }
+        .PayPanel .body .left .form-input {
+            padding:7px;
+            width:100%
+        }
+.paybutton {
+    background-color: #009b24;
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    margin-top: 20px;
+    color: #ffffff;
+    font-weight: 900;
+    border: 1px solid #009b24;
+    cursor:pointer;
+}
+    .paybutton:hover {
+        background-color: #50b044;
+    }
+.paymessage
+{
+    padding:10px;
+    background-color:#f88383;
+    color:darkred;
+    border-radius:5px;
     margin-bottom:10px;
-}
-.totalrow td{
-    font-weight:900;
-    font-size:17pt;
 }

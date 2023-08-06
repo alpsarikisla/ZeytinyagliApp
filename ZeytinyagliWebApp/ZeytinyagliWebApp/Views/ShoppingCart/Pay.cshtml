@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Pay";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="PayPanel">
+    <div class="header">
+        <h3>Ödeme İşlemi</h3>
+    </div>
+    @if (!string.IsNullOrEmpty(ViewBag.message))
+    {
+        <div class="paymessage">
+            @ViewBag.message
+        </div>
+    }
+    @using (Html.BeginForm())
+    {
+        <div class="body">
+
+            <div class="left">
+                <table>
+                    <tr>
+                        <td>Kart Üzerindeki İsim</td>
+                        <td colspan="2"><input name="name" type="text" class="form-input" /></td>
+                    </tr>
+                    <tr>
+                        <td>Kart Numarası</td>
+                        <td colspan="2"><input name="CardNumber" type="text" class="form-input" placeholder="---- ---- ---- ----" maxlength="16" /></td>
+                    </tr>
+                    <tr>
+                        <td>Son Kullanma Tarihi</td>
+                        <td><input name="ReqM" type="text" class="form-input" placeholder="Ay" maxlength="2" /></td>
+                        <td><input name="ReqY" type="text" class="form-input" placeholder="Yıl" maxlength="4" /></td>
+                    </tr>
+                    <tr>
+                        <td>Güvenlik Kodu</td>
+                        <td colspan="2"><input name="CCV" type="text" class="form-input" placeholder="---" maxlength="3" /></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="right">
+                <img src="~/Assets/SiteImages/CreditCard.png" />
+            </div>
+        </div>
+        <div class="total">
+            <h3 style="padding-bottom:20px;">Sipariş Özeti</h3>
+            <table width="100%">
+                <tr>
+                    <td>Sipariş Tutarı</td>
+                    <td align="right">@ViewBag.Total ₺</td>
+                </tr>
+                <tr>
+                    <td>Vergi</td>
+                    <td align="right">@ViewBag.Total ₺</td>
+                </tr>
+                <tr>
+                    <td><b>Genel Toplam</b></td>
+                    <td align="right"><b>@ViewBag.Total ₺</b></td>
+                </tr>
+            </table>
+            <button type="submit" class="form-button paybutton">Ödeme Yap</button>
+        </div>
+    }
+
+</div>
+

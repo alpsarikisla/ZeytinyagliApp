@@ -117,6 +117,7 @@
     <Content Include="Assets\BrandLogos\komimi.png" />
     <Content Include="Assets\css\style.css" />
     <Content Include="Assets\SiteImages\body-bg.svg" />
+    <Content Include="Assets\SiteImages\CreditCard.png" />
     <Content Include="Assets\SiteImages\SiteLogo.png" />
     <Content Include="Assets\SiteImages\SiteLogoLight.png" />
     <Content Include="Assets\SiteImages\Slider1.png" />
@@ -170,6 +171,7 @@
     <Content Include="Views\PartialViews\_ProductList.cshtml" />
     <Content Include="Views\PartialViews\_CartpartialMenuView.cshtml" />
     <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\Pay.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

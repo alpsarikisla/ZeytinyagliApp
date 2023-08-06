@@ -51,7 +51,7 @@
                 <tr class="totalrow">
                     <td colspan="3"></td>
                     <td colspan="2">Toplam = </td>
-                    <td > @Model.Sum(x => x.Price * x.Quantity) ₺</td>
+                    <td> @Model.Sum(x => x.Price * x.Quantity) ₺</td>
                 </tr>
             }
             else
@@ -65,5 +65,8 @@
 
         </table>
     </div>
+    <br />
+    <a href="@Url.Action("Pay", "ShoppingCart")" class="form-button" style="background-color:#08a807; color:white; float:right" >Ödeme Ekranına Geç</a>
+    <a href="@Url.Action("Index", "Home")" class="form-button" style="float:right">Alışverişe Devam Et</a>
 </div>
 
